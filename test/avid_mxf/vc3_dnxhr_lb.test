@@ -1,0 +1,4 @@
+#!/bin/sh
+
+${srcdir}/check.sh 3 61 vc3_dnxhr_lb hd
+
