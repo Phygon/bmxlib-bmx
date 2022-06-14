@@ -5,6 +5,8 @@ libwriters_la_SOURCES = \
 	InputTrack.h \
 	OutputTrack.cpp \
 	OutputTrack.h \
+	RandomUmid.cpp \
+	RandomUmid.h \
 	TrackMapper.cpp \
 	TrackMapper.h
 

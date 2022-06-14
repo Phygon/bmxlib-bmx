@@ -49,6 +49,7 @@
 #include "RawInputTrack.h"
 #include "../writers/OutputTrack.h"
 #include "../writers/TrackMapper.h"
+#include "../writers/RandomUmid.h"
 #include <bmx/clip_writer/ClipWriter.h>
 #include <bmx/as02/AS02PictureTrack.h>
 #include <bmx/essence_parser/DVEssenceParser.h>
@@ -3485,6 +3486,7 @@ int main(int argc, const char** argv)
     if (do_print_version)
         log_info("%s\n", get_app_version_info(APP_NAME).c_str());
 
+    mxf_generate_aafsdk_umid = bmx_generate_random_umid;
 
     int cmd_result = 0;
     try

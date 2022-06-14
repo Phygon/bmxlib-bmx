@@ -49,6 +49,7 @@
 #include "MXFInputTrack.h"
 #include "../writers/OutputTrack.h"
 #include "../writers/TrackMapper.h"
+#include "../writers/RandomUmid.h"
 #include <bmx/mxf_reader/MXFFileReader.h>
 #include <bmx/mxf_reader/MXFGroupReader.h>
 #include <bmx/mxf_reader/MXFSequenceReader.h>
@@ -2343,6 +2344,7 @@ int main(int argc, const char** argv)
     if (do_print_version)
         log_info("%s\n", get_app_version_info(APP_NAME).c_str());
 
+    mxf_generate_aafsdk_umid = bmx_generate_random_umid;
 
     int cmd_result = 0;
     try
