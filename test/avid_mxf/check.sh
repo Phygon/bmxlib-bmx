@@ -17,6 +17,9 @@ elif [ "$1" = "gfp" ]; then
   EXTRA_OPTS="$EXTRA_OPTS --regtest-end $2 "
   MD5S_NAME=$MD5S_NAME"_gfp"
   shift 2
+elif [ "$1" = "hd" ]; then
+  EXTRA_OPTS="$EXTRA_OPTS --width 1920 --height 1080 "
+  shift 1
 elif [ "$1" != "" ]; then
   EXTRA_OPTS="$EXTRA_OPTS -f $1 "
   MD5S_NAME=$MD5S_NAME$1

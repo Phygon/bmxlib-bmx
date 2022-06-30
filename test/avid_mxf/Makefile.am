@@ -35,6 +35,11 @@ TESTS = \
 	vc3_720p_1251.test \
 	vc3_720p_1252.test \
 	vc3_1080p_1253.test \
+	vc3_dnxhr_444.test \
+	vc3_dnxhr_hqx.test \
+	vc3_dnxhr_hq.test \
+	vc3_dnxhr_sq.test \
+	vc3_dnxhr_lb.test \
 	avid_alpha_1080i25.test
 
 
@@ -75,6 +80,11 @@ EXTRA_DIST = \
 	vc3_720p_1251.test \
 	vc3_720p_1252.test \
 	vc3_1080p_1253.test \
+	vc3_dnxhr_444.test \
+	vc3_dnxhr_hqx.test \
+	vc3_dnxhr_hq.test \
+	vc3_dnxhr_sq.test \
+	vc3_dnxhr_lb.test \
 	avid_alpha_1080i25.test \
 	d10_30.md5s \
 	d10_40.md5s \
@@ -112,6 +122,11 @@ EXTRA_DIST = \
 	vc3_720p_1251.md5s \
 	vc3_720p_1252.md5s \
 	vc3_1080p_1253.md5s \
+	vc3_dnxhr_444.md5s \
+	vc3_dnxhr_hqx.md5s \
+	vc3_dnxhr_hq.md5s \
+	vc3_dnxhr_sq.md5s \
+	vc3_dnxhr_lb.md5s \
 	avid_alpha_1080i25.md5s \
 	check.sh \
 	create.sh \
@@ -157,6 +172,11 @@ create-data:
 	${srcdir}/create.sh ${srcdir} 3 38 vc3_720p_1251
 	${srcdir}/create.sh ${srcdir} 3 39 vc3_720p_1252
 	${srcdir}/create.sh ${srcdir} 3 40 vc3_1080p_1253
+	${srcdir}/create.sh ${srcdir} 3 58 vc3_dnxhr_444 hd
+	${srcdir}/create.sh ${srcdir} 3 59 vc3_dnxhr_hqx hd
+	${srcdir}/create.sh ${srcdir} 3 60 vc3_dnxhr_hq hd
+	${srcdir}/create.sh ${srcdir} 3 61 vc3_dnxhr_sq hd
+	${srcdir}/create.sh ${srcdir} 3 62 vc3_dnxhr_lb hd
 	${srcdir}/create.sh ${srcdir} 3 41 avid_alpha_1080i 25
 
 
@@ -198,5 +218,10 @@ create-samples:
 	${srcdir}/samples.sh 3 38 vc3_720p_1251
 	${srcdir}/samples.sh 3 39 vc3_720p_1252
 	${srcdir}/samples.sh 3 40 vc3_1080p_1253
+	${srcdir}/samples.sh 3 58 vc3_dnxhr_444
+	${srcdir}/samples.sh 3 59 vc3_dnxhr_hqx
+	${srcdir}/samples.sh 3 60 vc3_dnxhr_hq
+	${srcdir}/samples.sh 3 61 vc3_dnxhr_sq
+	${srcdir}/samples.sh 3 62 vc3_dnxhr_lb
 	${srcdir}/samples.sh 3 41 avid_alpha_1080i 25
 
