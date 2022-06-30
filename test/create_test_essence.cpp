@@ -111,7 +111,12 @@ typedef enum
     TYPE_RDD36_422                      = 55,
     TYPE_RDD36_4444                     = 56,
     TYPE_16BIT_PCM_SAMPLES              = 57,
-    TYPE_END                            = 58,
+    TYPE_VC3_DNXHR_444                  = 58,
+    TYPE_VC3_DNXHR_HQX                  = 59,
+    TYPE_VC3_DNXHR_HQ                   = 60,
+    TYPE_VC3_DNXHR_SQ                   = 61,
+    TYPE_VC3_DNXHR_LB                   = 62,
+    TYPE_END,
 } EssenceType;
 
 typedef struct
@@ -854,6 +859,21 @@ static void write_vc3(FILE *file, int type, unsigned int duration)
         default:
             frame_size = 417792;
             break;
+        case TYPE_VC3_DNXHR_444:
+            frame_size = 1835008;
+            break;
+        case TYPE_VC3_DNXHR_HQX:
+            frame_size = 917504;
+            break;
+        case TYPE_VC3_DNXHR_HQ:
+            frame_size = 917504;
+            break;
+        case TYPE_VC3_DNXHR_SQ:
+            frame_size = 606208;
+            break;
+        case TYPE_VC3_DNXHR_LB:
+            frame_size = 188416;
+            break;
     }
 
     write_data(file, duration * frame_size);
@@ -961,6 +981,11 @@ static void print_usage(const char *cmd)
     fprintf(stderr, " 55: RDD-36 422 Profile\n");
     fprintf(stderr, " 56: RDD-36 4444 Profile\n");
     fprintf(stderr, " 57: 16-bit PCM with duration in samples\n");
+    fprintf(stderr, " 58: VC3/DNxHR 444\n");
+    fprintf(stderr, " 59: VC3/DNxHR HQX\n");
+    fprintf(stderr, " 60: VC3/DNxHR HQ\n");
+    fprintf(stderr, " 61: VC3/DNxHR SQ\n");
+    fprintf(stderr, " 62: VC3/DNxHR LB\n");
 }
 
 int main(int argc, const char **argv)
@@ -1147,6 +1172,11 @@ int main(int argc, const char **argv)
         case TYPE_VC3_720P_1258:
         case TYPE_VC3_1080P_1259:
         case TYPE_VC3_1080I_1260:
+        case TYPE_VC3_DNXHR_444:
+        case TYPE_VC3_DNXHR_HQX:
+        case TYPE_VC3_DNXHR_HQ:
+        case TYPE_VC3_DNXHR_SQ:
+        case TYPE_VC3_DNXHR_LB:
             write_vc3(file, type, duration);
             break;
         case TYPE_AVID_ALPHA_HD_1080I:
