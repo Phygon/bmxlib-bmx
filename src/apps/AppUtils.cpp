@@ -1040,6 +1040,8 @@ string bmx::create_mxf_track_filename(const char *prefix, uint32_t track_number,
     return filename.append(buffer);
 }
 
+// use alternative UMID generator from RandomUmid.cpp by default
+void bmx_generate_random_umid(mxfUMID *umid);
 
 void bmx::set_avid_umid_type(AvidUMIDType type)
 {
@@ -1049,7 +1051,8 @@ void bmx::set_avid_umid_type(AvidUMIDType type)
             mxf_generate_aafsdk_umid = mxf_default_generate_umid;
             break;
         case AAFSDK_UMID_TYPE:
-            mxf_generate_aafsdk_umid = mxf_default_generate_aafsdk_umid;
+            //mxf_generate_aafsdk_umid = mxf_default_generate_aafsdk_umid;
+            mxf_generate_aafsdk_umid = bmx_generate_random_umid;
             break;
         case OLD_AAFSDK_UMID_TYPE:
             mxf_generate_aafsdk_umid = mxf_default_generate_old_aafsdk_umid;

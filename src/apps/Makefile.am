@@ -11,6 +11,7 @@ libapps_la_SOURCES = \
 	AS11Helper.cpp \
 	FrameworkHelper.cpp \
 	PropertyFileParser.cpp \
+	RandomUmid.cpp \
 	TimedTextManifestParser.cpp \
 	ps_avci_header_data.h
 
